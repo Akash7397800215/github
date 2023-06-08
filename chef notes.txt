@@ -1,0 +1,49 @@
+chef 
+----------------------------------
+*test and  repair 
+chef - client takes action only when it need to. think of it as test 
+and repair.
+
+chef looks at the current state of each resources and takes action only 
+when that resource is out of policy.
+----------------------------------------------------------------
+
+code
+
+file 'helle.txt' 
+  action :create 
+  content 'this is my first chef file'
+end
+
+-----------------------------------------
+cookbooks- 
+the fundamental unit of configuration and policy distributuion
+--------------------------------------------------------------
+list of cookbook:: recipe
+-r shotyform 'recipe [cookbook::recipe]
+in local mode chef needs a list of recipe to apply to the system
+this is called a run list. A run list is an ordered collection of recipe to execute.
+running 
+sudo chef- client --local-mode -r
+
+include_recipe
+a recipe  can include one or more recipes loacated in cookbooks by using the include_recipe method
+include_recipe 
+'cookbook::recipename'
+
+
+----------------------------------------
+file 'apache.html' do
+ action : create 
+ content 'welcome to enumtect'
+end
+
+
+
+
+
+
+
+
+
+
